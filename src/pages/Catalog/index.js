@@ -15,7 +15,7 @@ import {
     ProductTitle,
     ProductButton,
 } from './styles';
-import FloatCart from '../../components/Teste';
+import Teste from '../../components/Teste';
 export const App = () => {
     const [products, setProducts] = useState([
         {
@@ -25,20 +25,20 @@ export const App = () => {
                 'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
             price: 149.9,
         },
-        {
-            id: '2',
-            title: 'Assinatura mensal',
-            image_url:
-                'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-            price: 49.9,
-        },
-        {
-            id: '3',
-            title: 'Assinatura anual',
-            image_url:
-                'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-            price: 599,
-        },
+        // {
+        //     id: '2',
+        //     title: 'Assinatura mensala',
+        //     image_url:
+        //         'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
+        //     price: 49.9,
+        // },
+        // {
+        //     id: '3',
+        //     title: 'Assinatura anual',
+        //     image_url:
+        //         'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
+        //     price: 599,
+        // },
     ]);
 
     return (
