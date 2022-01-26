@@ -37,9 +37,9 @@ export default function Routes() {
             headerLeftContainerStyle: {
               marginLeft: 20,
             },
-            // headerBackImage: () => (
-            //   <FeatherIcon name="chevron-left" size={24} colpr="#f3f9ff" />
-            // ),
+            headerBackImage: () => (
+              <FeatherIcon name="chevron-left" size={24} color="#f3f9ff" />
+            ),
           }}
         />
       </Stack.Navigator>

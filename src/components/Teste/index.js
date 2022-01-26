@@ -20,7 +20,7 @@ const Teste = () => {
                 }}
             >
                 <FeatherIcon name="shopping-cart" size={24} color="#f3f9ff" />
-                <CartButtonText>2 itens</CartButtonText>
+                <CartButtonText>1 item</CartButtonText>
                 <CartPricing>
                     <CartTotalPrice>R$200,00</CartTotalPrice>
                 </CartPricing>
