@@ -10,7 +10,8 @@ export const ProductContainer = styled.View`
   flex: 1;
   flex-direction: row;
   margin-top: 60px;
- 
+ border-top-right-radius: 20px;
+ border-top-left-radius: 20px;
   background-color: #e83f5b;
 `;
 

@@ -1,0 +1,23 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "title": "Assinatura mensal",
+            "image_url": "https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png",
+            "price": 49.99
+        },
+        {
+            "id": "2",
+            "title": "Assinatura trimestral",
+            "image_url": "https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png",
+            "price": 149.99
+        },
+        {
+            "id": "3",
+            "title": "Assinatura anual",
+            "image_url": "https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/annual_subscription_qyolci.png",
+            "price": 539.99
+        }
+       
+    ]
+}

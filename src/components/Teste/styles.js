@@ -5,7 +5,8 @@ export const Container = styled.View`
   position: absolute;
   background: #e83f5b;
   padding: 0px 18px;
-  /* border-radius: 10px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
@@ -33,6 +34,7 @@ export const CartButtonText = styled.Text`
   flex: 1;
   color: #f3f9ff;
   font-weight: bold;
+  font-size: 16px;
   margin-left: 15px;
   margin-right: auto;
 `;

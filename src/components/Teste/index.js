@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { useMemo } from 'react';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import { useSelector } from 'react-redux';
+import formatValue from '../../utils/formatValue';
 import {
     CartButton,
     CartButtonText,
@@ -12,6 +13,19 @@ import {
 
 const Teste = () => {
     const navigation = useNavigation();
+    const products = useSelector(({ cart }) => cart);
+
+    const cartSize = useMemo(() => {
+        return products.length || 0;
+    }, [products]);
+
+    const cartTotal = useMemo(() => {
+        const cartAmount = products.reduce((accumulator, product) => {
+            const totalPrice = accumulator + product.price * product.amount;
+            return totalPrice;
+        }, 0);
+        return formatValue(cartAmount)
+    });
     return (
         <Container>
             <CartButton
@@ -20,9 +34,11 @@ const Teste = () => {
                 }}
             >
                 <FeatherIcon name="shopping-cart" size={24} color="#f3f9ff" />
-                <CartButtonText>1 item</CartButtonText>
+                <CartButtonText>
+                    {cartSize === 1 ? cartSize + ' item' : cartSize + ' itens'}
+                </CartButtonText>
                 <CartPricing>
-                    <CartTotalPrice>R$200,00</CartTotalPrice>
+                    <CartTotalPrice>{cartTotal}</CartTotalPrice>
                 </CartPricing>
                 <FeatherIcon name="chevron-right" size={24} color="#f3f9ff" />
             </CartButton>

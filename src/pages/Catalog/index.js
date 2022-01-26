@@ -1,5 +1,5 @@
 import Intl from 'intl/lib/core';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import formatValue from '../../utils/formatValue';
@@ -16,30 +16,25 @@ import {
     ProductButton,
 } from './styles';
 import Teste from '../../components/Teste';
-export const App = () => {
-    const [products, setProducts] = useState([
-        {
-            id: '1',
-            title: 'Assinatura trimestral',
-            image_url:
-                'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-            price: 149.9,
-        },
-        // {
-        //     id: '2',
-        //     title: 'Assinatura mensala',
-        //     image_url:
-        //         'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-        //     price: 49.9,
-        // },
-        // {
-        //     id: '3',
-        //     title: 'Assinatura anual',
-        //     image_url:
-        //         'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-        //     price: 599,
-        // },
-    ]);
+import api from '../../services/api';
+import * as CartActions from '../../store/modules/cart/actions';
+import { useDispatch } from 'react-redux';
+
+export const Catalog = () => {
+    const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        async function loadProducts() {
+            const { data } = await api.get('/products');
+            setProducts(data);
+        }
+        loadProducts();
+    }, []);
+
+    const handleAddToCart = (id) => {
+        dispatch(CartActions.addToCartRequest(id));
+    };
 
     return (
         <>
@@ -62,7 +57,11 @@ export const App = () => {
                                     <ProductPrice>
                                         {formatValue(item.price)}
                                     </ProductPrice>
-                                    <ProductButton onPress={() => {}}>
+                                    <ProductButton
+                                        onPress={() => {
+                                            handleAddToCart(item.id);
+                                        }}
+                                    >
                                         <ProductButtonText>
                                             Adicionar
                                         </ProductButtonText>
@@ -84,4 +83,4 @@ export const App = () => {
     );
 };
 
-export default App;
+export default Catalog;
