@@ -44,7 +44,7 @@ export const Catalog = () => {
                         data={products}
                         keyExtractor={(item) => item.id}
                         ListFooterComponent={<View />}
-                        ListFootComponentStyle={{
+                        ListFooterComponentStyle={{
                             height: 80,
                         }}
                         renderItem={({ item }) => (

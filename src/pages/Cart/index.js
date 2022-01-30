@@ -64,7 +64,7 @@ const Cart = () => {
                     keyExtractor={(item) => item.id}
                     ListEmptyComponent={<EmptyCart />}
                     ListFooterComponent={<View />}
-                    ListFootComponentStyle={{
+                    ListFooterComponentStyle={{
                         height: 80,
                     }}
                     renderItem={({ item }) => (
